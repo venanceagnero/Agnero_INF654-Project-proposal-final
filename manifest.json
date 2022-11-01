@@ -1,0 +1,22 @@
+{
+    "name": "Cafridia",
+    "short_name": "C",
+    "description": "community members",
+    "start_url": "/index.html",
+    "scope": ".",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background-color": "#008000",
+    "theme_color": "#228822",
+    "dir": "1tr",
+    "lang": "en-US",
+    "icons": [{
+        "src": " ",
+        "type": " ",
+        "size": " "
+
+    }]
+
+
+
+}
