@@ -26,49 +26,54 @@
         </div>
 
         <div class="body-item col l4 m6 s12 ">
-            <form>
-                <h5 class="form-title "> Member Create Login</h5>
 
-                <div class="divider "></div>
+            <div id="Log-module" class="LogModule">
+                <div class="create-log">
+                    <form id="createLog-form">
+                        <h5 class="form-title "> Member Create Login</h5>
 
-                <div class="input-form ">
+                        <div class="divider "></div>
 
-                    <div class="input-field ">
-                        <div>
-                            <label for="Lname "> Username</label>
+                        <div class="input-form ">
+
+                            <div class="input-field ">
+                                <div>
+                                    <label for="Lname "> Email</label>
+                                </div>
+
+                                <input type="text" placeholder=" Enter your email" id="cLog-email" class="validate " required />
+                            </div>
+                            <div class="input-field ">
+                                <div class="input-label">
+                                    <label for="Passname "> Password</label>
+                                </div>
+                                <input type="text" placeholder=" create your password " id="cLog-password" class="validate " required />
+
+                            </div>
+                            <div class="input-field ">
+                                <div class="input-label">
+                                    <label for="Passname "> Confirm password</label>
+                                </div>
+                                <input type="text" placeholder=" Confirm your password " id="cLog-confPassword" class="validate " required />
+
+                            </div>
+
+
+                            <div class="submit-Btn ">
+                                <button id="submit"> Create Login</button>
+                            </div>
                         </div>
 
-                        <input type="text" placeholder=" Enter username" id="Username " class="validate " required />
-                    </div>
-                    <div class="input-field ">
-                        <div class="input-label">
-                            <label for="Passname "> Password</label>
-                        </div>
-                        <input type="text" placeholder=" Enter password " id="Password" class="validate " required />
 
-                    </div>
-                    <div class="input-field ">
-                        <div class="input-label">
-                            <label for="Passname "> Confirm password</label>
-                        </div>
-                        <input type="text" placeholder=" Re-enter password " id="ConfPassword" class="validate " required />
-
-                    </div>
-
-
-                    <div class="submit-Btn ">
-                        <button> Create Login</button>
-                    </div>
+                    </form>
                 </div>
-
-
-            </form>
-            <div class="acount ">
-                <ul>
-                    <li>
-                        <a href="/"> Login</a>
-                    </li>
-                </ul>
+                <div class="acount ">
+                    <ul>
+                        <li>
+                            <a href="/"> Login</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         </div>

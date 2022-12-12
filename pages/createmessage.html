@@ -36,7 +36,7 @@
                 <a href="/pages/announcements.html" class="waves-effet"> Announcements</a>
             </li>
 
-            <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 4 </span></a></li>
+            <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; ">4</span></a></li>
         </ul>
     </nav>
 
@@ -48,7 +48,7 @@
             <a href="/pages/announcements.html" class="waves-effet"> Announcements</a>
         </li>
 
-        <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 4 </span></a></li>
+        <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; ">4 </span></a></li>
 
         <div class="divider"></div>
     </ul>
@@ -65,32 +65,30 @@
 
 
 
-
     <div class="main-body row">
-        <div>
-            <div class="createAnnounce">
-                <ul>
-                    <li>
-                        <a href="/pages/createannoucement.html"> Create Announcement</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="body-item">
-            <h5 class="title"> Announcements</h5>
+        <div class="chatcontainer">
             <div class="listcontainer row">
+            </div>
 
+            <div class="chatform">
+                <form id="chatform" class="formchat">
+                    <div class="input-form row">
+                        <div class="input-field col l10 m9 s10" id="message-field">
+                            <textarea id="messageBox" class="messageBox">message...</textarea>
+                        </div>
+                        <div class="send-Btn col l2 m3 s2">
+                            <button id="submit" class="sendbtn"> Send</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 
     </div>
-    <script src="/js/uidata/andata.js"></script>
+    <script src="/js/uidata/sentmessages.js"></script>
     <script src="/js/ui.js"></script>
     <script src="/js/app.js"></script>
-    <script type="module" src="/js/db/andb.js"></script>
-
-
+    <script type="module" src="/js/db/mesdb.js"></script>
 
     <footer>
         <div class="footer-items row ">
@@ -114,8 +112,6 @@
             </div>
         </div>
     </footer>
-
-
 
 </body>
 

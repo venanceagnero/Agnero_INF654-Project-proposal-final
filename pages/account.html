@@ -18,63 +18,64 @@
     <header>
         <h2> Cafridia</h2>
     </header>
-
     <div class="main-body row">
-        <div class="body-item col l8 m6 s12">
+
+        <div class="body-item col l6 m6 s12">
             <img src="/image/img/Cimg3.png" alt="" class="sideImg" />
         </div>
-
-        <div class="body-item col l4 m6 s12 ">
+        <div class="exitaccount">
+            <a href="/pages/dataportal.html" class="waves-effet"> exit account</a>
+        </div>
+        <div class="body-item col l6 m6 s12 ">
             <div id="minputform">
-                <form id="regForm">
-                    <h5 class="form-title "> Member Register</h5>
+                <form id="account-Form" class="accountform">
+                    <h5 class="form-title "> Account info</h5>
+
+                    <div class="editprofile">
+                        <i class="material-icons" data-id="${id}"> edit</i>
+                    </div>
+                    <div class="deleteprofile">
+                        <i class="material-icons" data-id="${id}"> delete_outline </i>
+                    </div>
 
                     <div class="divider "></div>
-
                     <div class="input-form ">
-
+                        <div>
+                            <div class="mesSenderPhoto">
+                                <img src="/image/img/profilepic.png" class="responsive-img materialboxed" alt="">
+                            </div>
+                            <input type="file" id="mphotoid" required />
+                        </div>
                         <div class="input-field ">
                             <div>
                                 <label for="fname "> Firstname</label>
                             </div>
-                            <input type="text" id="fname" placeholder=" Enter firstname " required />
+                            <input type="text" id="fname" class="validate" />
                         </div>
                         <div class="input-field ">
                             <div class="input-label">
                                 <label for="lname "> Lastname</label>
                             </div>
-                            <input type="text" id="lname" placeholder=" Enter lastname " id="lname " class="validate " required />
+                            <input type="text" id="lname" class="validate " />
 
                         </div>
                         <div class="input-field ">
                             <div>
                                 <label for="cofResidency "> City of residency </label>
                             </div>
-                            <input type="text" id="cofResidency" placeholder=" Enter city of residency " class="validate " required />
+                            <input type="text" id="cofResidency" class="validate " />
 
                         </div>
-                        <div>
-                            <div class="input-label">
-                                <label for="mphoto"> Photo Id</label>
-                            </div>
-                            <input type="file" id="mphotoid" required />
-                        </div>
+
                         <div class="submit-Btn">
-                            <button id="submit"> Register</button>
+                            <button id="submit"> Save</button>
                         </div>
+
                     </div>
 
 
                 </form>
             </div>
-            <div class="acount ">
-                <ul>
-                    <li>
-                        <a href="/pages/createlogin.html "> Create Login</a>
-                    </li>
-                </ul>
-            </div>
-            FirebaseError: Missing or insufficient permissions.
         </div>
     </div>
     <script src="/js/app.js"></script>

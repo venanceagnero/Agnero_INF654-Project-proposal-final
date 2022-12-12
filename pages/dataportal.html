@@ -21,7 +21,13 @@
     <nav class="nav-wrapper">
         <div class="container">
             <a class="right sidenav-trigger" data-target="side-menu"> <i class="material-icons"> menu</i></a>
+            <a class="left sidenav-trigger" data-target="user-account"> <i class="material-icons">person</i></a>
         </div>
+
+        <div class="hide-on-med-and-down">
+            <a class="left side-trigger" data-target="user-account"> <i class="material-icons">person</i></a>
+        </div>
+
         <ul class=" right hide-on-med-and-down">
             <li>
                 <a href="/pages/members.html" class="waves-effet">Members</a>
@@ -30,8 +36,7 @@
                 <a href="/pages/announcements.html" class="waves-effet"> Announcements</a>
             </li>
 
-            <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 10 </span></a>
-            </li>
+            <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 4 </span></a></li>
         </ul>
     </nav>
 
@@ -43,8 +48,21 @@
             <a href="/pages/announcements.html" class="waves-effet"> Announcements</a>
         </li>
 
-        <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 10 </span></a></li>
+        <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; ">4</span></a></li>
+
+        <div class="divider"></div>
     </ul>
+
+    <ul id="user-account" class="sidenav user-account ">
+        <li>
+            <a href="/pages/account.html " class="waves-effet "> Account</a>
+        </li>
+        <div class="divider "></div>
+        <li>
+            <a href="/ " class="waves-effet "> Logout</a>
+        </li>
+    </ul>
+
 
     <div class="main-body">
         <div class="body-item">

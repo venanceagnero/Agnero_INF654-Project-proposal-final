@@ -93,13 +93,19 @@ nav .navbar-trigger {
 }
 
 .message-item {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .message-item .message {
-    border-radius: 15%;
+    border-radius: 5%;
     width: 60%;
     margin: auto;
+    position: relative;
+}
+
+.messageinfo {
+    grid-area: details;
+    margin-top: 6px;
 }
 
 .messagedate {
@@ -111,6 +117,32 @@ nav .navbar-trigger {
     width: 60px;
 }
 
+.message-delete {
+    grid-area: delete;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.editprofile {
+    grid-area: edit;
+    position: absolute;
+    top: 30px;
+    right: 120px;
+}
+
+.deleteprofile {
+    grid-area: delete;
+    position: absolute;
+    top: 30px;
+    right: 60px;
+}
+
+.exitaccount {
+    float: right;
+    margin-right: 20px;
+}
+
 
 /* member profile*/
 
@@ -120,6 +152,11 @@ nav .navbar-trigger {
 
 .M-Fname {
     font-weight: bold;
+    font-size: 1.3em;
+}
+
+.M-name {
+    margin-bottom: 15px;
 }
 
 .editmessage {
@@ -135,6 +172,39 @@ nav .navbar-trigger {
 
 form {
     padding-top: 10px;
+}
+
+.accountform {
+    position: relative;
+}
+
+.chatcontainer {
+    width: 90%;
+    margin: auto;
+}
+
+.chatform {
+    width: 70%;
+    margin: auto;
+}
+
+.formchat {
+    width: 90%;
+    margin-left: 70px;
+}
+
+.messageBox {
+    border-radius: 2%;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.send-Btn {
+    margin-top: 28px;
+}
+
+.sendbtn {
+    margin-right: 20px;
 }
 
 .input-form {

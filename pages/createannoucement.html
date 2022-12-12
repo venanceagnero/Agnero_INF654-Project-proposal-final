@@ -21,7 +21,13 @@
     <nav class="nav-wrapper">
         <div class="container">
             <a class="right sidenav-trigger" data-target="side-menu"> <i class="material-icons"> menu</i></a>
+            <a class="left sidenav-trigger" data-target="user-account"> <i class="material-icons">person</i></a>
         </div>
+
+        <div class="hide-on-med-and-down">
+            <a class="left side-trigger" data-target="user-account"> <i class="material-icons">person</i></a>
+        </div>
+
         <ul class=" right hide-on-med-and-down">
             <li>
                 <a href="/pages/members.html" class="waves-effet">Members</a>
@@ -30,7 +36,7 @@
                 <a href="/pages/announcements.html" class="waves-effet"> Announcements</a>
             </li>
 
-            <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 10 </span></a></li>
+            <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 4 </span></a></li>
         </ul>
     </nav>
 
@@ -42,9 +48,20 @@
             <a href="/pages/announcements.html" class="waves-effet"> Announcements</a>
         </li>
 
-        <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 10 </span></a></li>
+        <li><a href="/pages/messages.html" class="waves-effet"> Messages <span class="badge white-text red new" style=" position:relative; top:0px; right:5px; "> 4</span></a></li>
+
+        <div class="divider"></div>
     </ul>
 
+    <ul id="user-account" class="sidenav user-account ">
+        <li>
+            <a href="/pages/account.html " class="waves-effet "> Account</a>
+        </li>
+        <div class="divider "></div>
+        <li>
+            <a href="/ " class="waves-effet "> Logout</a>
+        </li>
+    </ul>
 
 
     <div class="main-body row">
@@ -53,7 +70,7 @@
         </div>
 
         <div class="body-item col l4 m6 s12 ">
-            <form>
+            <form id="Anform">
                 <h5 class="form-title "> Create Announcement</h5>
 
                 <div class="divider "></div>
@@ -64,27 +81,27 @@
                         <div>
                             <label for="Ancmenttitle "> Announcement title</label>
                         </div>
-                        <input type="text" placeholder=" Enter announcememt title" required />
+                        <input type="text" placeholder=" Enter announcememt title" id="title" required />
 
                     </div>
                     <div class="input-field ">
                         <div>
-                            <label for="Ancmendate "> Announcement date</label>
+                            <label for="Ancmentdate "> Announcement date</label>
                         </div>
-                        <input type="date" required />
+                        <input type="date" id="date" required />
 
                     </div>
 
                     <div class="input-field ">
                         <div class="input-label">
-                            <label for="Lname "> Annoncement</label>
+                            <label for="Ancmentext "> Annoncement</label>
                         </div>
-                        <textarea> Edit announcement...</textarea>
+                        <textarea id="announcetext"> Edit announcement...</textarea>
                     </div>
 
 
                     <div class="submit-Btn">
-                        <button> Submit</button>
+                        <button id="submit"> Submit</button>
                     </div>
                 </div>
 
@@ -97,6 +114,8 @@
     </div>
 
     <script src="/js/ui.js"></script>
+    <script src="/js/app.js"></script>
+    <script type="module" src="/js/db/andb.js"></script>
 
     <footer>
         <div class="footer-items row ">
