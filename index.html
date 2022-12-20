@@ -15,82 +15,248 @@
 </head>
 
 <body>
+
     <header>
         <h2> Cafridia</h2>
     </header>
 
-    <div class="main-body row">
-        <div class="body-item col l8 m6 s12">
-            <img src="/image/img/Cimg3.png" alt="" class="sideImg" />
+
+    <nav class=" nav-wrapper ">
+        <!--small screen navigation icon-->
+        <div class="container ">
+            <a class="right sidenav-trigger" data-target="side-menu"> <i class="material-icons"> menu</i></a>
+            <a class="left sidenav-trigger logged-in" data-target="user-account"> <i class="material-icons">person</i></a>
         </div>
 
-        <div class="body-item col l4 m6 s12 ">
-            <form>
-                <h5 class="form-title "> Member Login</h5>
+        <!--large screen navigation  bar links-->
+        <ul class=" navbar left hide-on-med-and-down ">
+            <li class="logged-out"><a href="#" class="waves-effet modal-trigger" data-target="modal-signup"> Sign Up</a></li>
+            <li class="logged-out"><a href="#" class="waves-effet modal-trigger" data-target="modal-createlogin"> Create Login</a></li>
+            <li class="logged-out"><a href="#" class="waves-effet modal-trigger" data-target="modal-login"> Login</a></li>
+            <li class="logged-in"><a href="/pages/announcements.html" class="waves-effet"> Announcements</a></li>
+            <li class="logged-in"><a href="/pages/messages.html" class="waves-effet"> Messages</a></li>
+            <li class="logged-in"><a href="#" class="waves-effet modal-trigger" data-target="modal-account"> Account</a></li>
+            <li class="logged-in"><a href="#" class="waves-effet" id="log-out"> Logout</a></li>
+        </ul>
+    </nav>
 
-                <div class="divider "></div>
 
-                <div class="input-form ">
+    <!--small screen navigation links-->
+    <ul id="side-menu" class="sidenav side-menu">
+        <li class="logged-out"><a href="#" class="waves-effet modal-trigger " data-target="modal-signup"> Sign Up</a></li>
+        <li class="logged-out"><a href="#" class="waves-effet modal-trigger " data-target="modal-createlogin"> Create Login</a></li>
+        <li class="logged-out"><a href="#" class="waves-effet modal-trigger " data-target="modal-login"> Login</a></li>
+        <li class="logged-in"><a href="/pages/announcements.html" class="waves-effet"> Announcements</a></li>
+        <li class="logged-in"><a href="/pages/messages.html" class="waves-effet"> Messages</a></li>
+    </ul>
 
-                    <div class="input-field ">
-                        <div>
-                            <label for="Lname "> Username</label>
-                        </div>
-
-                        <input type="text" placeholder=" Enter username" id="Username " class="validate " required />
-                    </div>
-                    <div class="input-field ">
-                        <div class="input-label">
-                            <label for="Passname "> Password</label>
-                        </div>
-                        <input type="text" placeholder=" Enter password " id="Password" class="validate " required />
-
-                    </div>
-
-                    <div class="submit-Btn ">
-                        <button> Login</button>
+    <!--user account info-->
+    <div id="modal-account" class="modal">
+        <div class="divider "></div>
+        <div id="account-info" class="user-info">
+            <h5 class="form-title"> Account info</h5>
+            <div class="divider"></div>
+            <div class="infoUser">
+                <div>
+                    <div class="mesSenderPhoto">
+                        <img src="/image/img/profilepic.png" class="responsive-img materialboxed" alt=" ">
                     </div>
                 </div>
+                <div class="info-field">
+                    <div class="info">
+                        <label for="fname"> Firstname</label>
+                        <p> Mark </p>
+                    </div>
 
+                    <div class="info">
+                        <label for="fname"> Lastname</label>
+                        <p> Hilton </p>
+                    </div>
 
-            </form>
-            <div class="acount ">
-                <ul>
-                    <li>
-                        <a href="/pages/register.html"> Register</a>
-                    </li>
-                </ul>
+                    <div class="info">
+                        <label for="fname"> City of residency</label>
+                        <p> Dallas </p>
+                    </div>
+
+                </div>
             </div>
 
         </div>
-
     </div>
 
-    <script src="/js/ui.js"></script>
-    <script src="/js/app.js"></script>
-    <script type="module" src="/js/db.js"></script>
+    <ul id="user-account" class="sidenav user-account">
+        <li class="logged-in"><a href="#" class="waves-effet modal-trigger" data-target="modal-account"> Account</a></li>
+        <div class="divider"></div>
+        <li class="logged-in">
+            <a href="#" class="waves-effet" id="log-out"> Logout</a>
+        </li>
+    </ul>
 
+
+    <div class="main-body">
+        <!--logged  out home page-->
+        <div class="image-container logged-out">
+            <img src="/image/img/Cimg3.png" alt=" " class="main-image" />
+        </div>
+
+        <!--logged in home page-->
+        <div class="body-item logged-in" id="Member_Portal">
+            <h5 class="title">Communities Members</h5>
+            <div class="ProfileList-container row">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--login form-->
+    <div id="modal-login" class="modal">
+        <div class="UserLogin" id="user-login">
+            <form class="loginform" id="login-form">
+                <h5 class="form-title"> Member Login</h5>
+
+                <div class="divider"></div>
+
+                <div class="input-form">
+
+                    <div class="input-field">
+                        <div>
+                            <label for="email"> Email</label>
+                        </div>
+
+                        <input type="text" placeholder="Enter email" id="login-email" class="validate" required />
+                    </div>
+                    <div class="input-field">
+                        <div class="input-label">
+                            <label for="Passname"> Password</label>
+                        </div>
+                        <input type="text" placeholder="Enter password" id="login-password" class="validate" required />
+                    </div>
+                    <div class="submit-Btn">
+                        <button id="submit"> Login </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Register in signing up form -->
+    <div id="modal-signup" class="modal">
+        <div class="UserSignup" id="user-signup">
+            <form class="signupform" id="signup-form">
+                <h5 class="form-title"> Member Sign Up</h5>
+
+                <div class="divider"></div>
+
+                <div class="input-form">
+
+                    <div class="input-field">
+                        <div>
+                            <label for="fname"> Firstname</label>
+                        </div>
+                        <input type="text" id="fname" placeholder="Enter firstname" required />
+                    </div>
+                    <div class="input-field">
+                        <div class="input-label">
+                            <label for="lname"> Lastname</label>
+                        </div>
+                        <input type="text" id="lname" placeholder="Enter lastname" class="validate" required />
+
+                    </div>
+                    <div class="input-field">
+                        <div>
+                            <label for="cofResidency"> City of residency </label>
+                        </div>
+                        <input type="text" id="cofResidency" placeholder="Enter city of residency" class="validate" required />
+
+                    </div>
+                    <div>
+                        <div class="input-label">
+                            <label for="mphoto"> Photo Id</label>
+                        </div>
+                        <input type="file" id="mphotoid" required />
+                    </div>
+
+                    <div class="submit-Btn">
+                        <button id="submit"> Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!--Create authentification credentials to login form-->
+    <div id="modal-createlogin" class="modal">
+        <div class="UsercreateLogin" id="user-create-login">
+            <form class="createloginform" id="createlogin-form">
+                <h5 class="form-title"> Member Create Login</h5>
+
+                <div class="divider"></div>
+
+                <div class="input-form">
+
+                    <div class="input-field">
+                        <div>
+                            <label for="Lname"> Email</label>
+                        </div>
+
+                        <input type="text" placeholder="Enter your email" id="cLog-email" class="validate" required />
+                    </div>
+                    <div class="input-field">
+                        <div class="input-label">
+                            <label for="Passname"> Password</label>
+                        </div>
+                        <input type="text" placeholder="create your password" id="cLog-password" class="validate" required />
+
+                    </div>
+                    <div class="input-field">
+                        <div class="input-label">
+                            <label for="Passname"> Confirm password</label>
+                        </div>
+                        <input type="text" placeholder="Confirm your password" id="cLog-confPassword" class="validate" required />
+                    </div>
+
+                    <div class="submit-Btn">
+                        <button id="submit"> Create Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/js/ui.js"></script>
+    <script src="/js/uidata/authui.js"></script>
+    <script src="/js/app.js"></script>
+    <script type="module" src="/js/creatauth.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/db/prdb.js"></script>
+    <script src="/js/uidata/prdata.js"></script>
 
 
 
     <footer>
         <div class="footer-items row ">
-            <div class="footer-text col l8 m6 s12">
+            <div class="footer-text col l8 m6 s12 ">
                 <em> copyright @ Cafridia | Designed by Venance Agnero| </em>
             </div>
-            <div class="socialmedia-items col l4 m6 s12 row">
-                <div class=" socialmedialink col">
-                    <a href=" " class="fa fa-facebook"> </a>
+            <div class="socialmedia-items col l4 m6 s12 row ">
+                <div class=" socialmedialink col ">
+                    <a href=" " class="fa fa-facebook "> </a>
                 </div>
-                <div class=" socialmedialink col">
-                    <a href=" " class="fa fa-twitter"> </a>
+                <div class=" socialmedialink col ">
+                    <a href=" " class="fa fa-twitter "> </a>
                 </div>
-                <div class=" socialmedialink col">
-                    <a href=" " class="fa fa-linkedin"> </a>
+                <div class=" socialmedialink col ">
+                    <a href=" " class="fa fa-linkedin "> </a>
                 </div>
 
-                <div class="socialmedialink col">
-                    <a href=" " class="fa fa-instagram"> </a>
+                <div class="socialmedialink col ">
+                    <a href=" " class="fa fa-instagram "> </a>
                 </div>
             </div>
         </div>
