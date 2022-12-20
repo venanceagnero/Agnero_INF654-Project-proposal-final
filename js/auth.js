@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+import { getAuth, signOut, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
 
 
 // Your web app's Firebase configuration
@@ -20,61 +20,34 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
-//create login
-const createLogForm = document.querySelector("createLog-form");
-createLogForm.addEventListener("Submit", (e) => {
-    e.preventDefault();
-
-    //get user info
-    const email = createLogForm["cLog-email"].value;
-    const password = createLogForm["cLog-password"].value;
-    const confpassword = createLogForm["cLog-confPassword"].value;
-
-    createUserWithEmailAndPassword(auth, email, password, confpassword).then((userCredential) => {
-        //sighed -in
-        const user = userCredential.user;
-        console.log(user);
-
-        const createLog = document.querySelector("create-log");
-        M.Modal.getInstance(modal).close();
-        signupForm.reset();
-    }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-    });
-})
-
 //logout
-
-const logout = document.querySelector("signout");
+const logout = document.querySelector("#log-out");
 logout.addEventListener("click", (e) => {
     e.preventDefault();
     signOut(auth).then(() => {
-        console.log("User has logout");
+        console.log("User has logged out");
     }).catch((error) => {
-        //error message
+        //error handler
     });
 });
+
 
 //login
 const loginForm = document.querySelector("#login-form");
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const email = loginForm("login-email").value;
-    const password = loginForm("login-pasword").value;
+    const email = loginForm["login-email"].value;
+    const password = loginForm["login-password"].value;
 
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-        //sighed -in
+        //signed -in
         const user = userCredential.user;
         console.log(user);
-
-        const modal = document.querySelector("#modal-signup");
-        M.Modal.getInstance(modal).close();
-        signupForm.reset();
+        const userportal = document.querySelector("#modal-login");
+        M.Modal.getInstance(userportal).close();
+        loginForm.reset();
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
     });
-
-
 });
