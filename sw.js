@@ -1,7 +1,7 @@
-const staticCache = "Static-cache-v3";
+const staticCache = "Static-cache-v5";
 
 
-const dynamicCache = "Dynamic-cache-v4";
+const dynamicCache = "Dynamic-cache-v6";
 
 
 const assets = ["/", "/index.html",
@@ -50,7 +50,7 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
     //fires whenever the app requests a ressource (file or data)
     //next, go get the requested ressource from the network
-    if (event.request.url.index("firestore.googleapis.com") === -1) {
+    if (event.request.url.indexOf("firestore.googleapis.com") === -1) {
         event.respondWidth(caches.match(event.request).then((response) => {
             return response || fetch(event.request).then((fetchRes) => {
                 return caches.open(dynamicCache).then((cache) => {
