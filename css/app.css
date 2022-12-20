@@ -34,12 +34,28 @@ nav .navbar-trigger {
     margin: 0;
 }
 
+.navbar {
+    height: 50px;
+}
+
+.sidenav {
+    margin-top: 100px;
+    height: 40%;
+    width: 40%;
+}
+
 
 /* main body style*/
 
-.main-body {
+.image-container {
+    padding: 0px;
+    margin: 0px;
+}
+
+.main-image {
     margin: 0px;
     padding: 0px;
+    width: 100%;
 }
 
 .listcontainer {
@@ -53,8 +69,30 @@ nav .navbar-trigger {
 }
 
 .body-item {
-    margin: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 0px;
+}
+
+.infoUser {
+    margin: 20px;
+}
+
+.info-field {
+    margin-top: 20px;
+}
+
+.info {
+    margin-top: 35px;
+}
+
+.info p {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.modal {
+    margin-top: 100px;
 }
 
 
@@ -124,6 +162,18 @@ nav .navbar-trigger {
     right: 10px;
 }
 
+.exitaccount {
+    float: right;
+    margin-right: 20px;
+}
+
+
+/* member profile*/
+
+#modal-account {
+    position: relative;
+}
+
 .editprofile {
     grid-area: edit;
     position: absolute;
@@ -137,14 +187,6 @@ nav .navbar-trigger {
     top: 30px;
     right: 60px;
 }
-
-.exitaccount {
-    float: right;
-    margin-right: 20px;
-}
-
-
-/* member profile*/
 
 .mphoto {
     width: 100px;
@@ -193,7 +235,7 @@ form {
     margin-left: 70px;
 }
 
-.messageBox {
+.message-box {
     border-radius: 2%;
     height: 50px;
     margin-left: 10px;
