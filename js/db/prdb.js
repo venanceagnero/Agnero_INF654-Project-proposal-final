@@ -1,6 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-import { getFirestore, collection, getDocs, onSnapshot, addDoc, enableIndexedDbPersistence } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, onSnapshot, addDoc, deleteDoc, doc, enableIndexedDbPersistence } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,8 +24,10 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
+const auth = getAuth(app);
+
 //for profile
-async function getProfile(db) {
+async function getMemData(db) {
     const profileCollect = collection(db, "profile");
     const profileSnapshot = await getDocs(profileCollect);
     const profileList = profileSnapshot.docs.map((doc) => doc);
@@ -44,7 +49,7 @@ enableIndexedDbPersistence(db)
     });
 
 
-//using onSnapchot method for profile
+//using onSnapchot method for profile to track user activities
 const prosub = onSnapshot(collection(db, "profile"), (doc) => {
     doc.docChanges().forEach((change) => {
         if (change.type === "added") {
@@ -53,15 +58,13 @@ const prosub = onSnapshot(collection(db, "profile"), (doc) => {
         }
 
         if (change.type === "removed") {
-
+            removeProfile(change.doc.id);
         }
     })
 })
 
-
-
 //create/add  profile
-const form = document.querySelector("form");
+const form = document.querySelector("#signup-form");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     addDoc(collection(db, "profile"), {
@@ -75,5 +78,41 @@ form.addEventListener("submit", (event) => {
     form.lname.value = "";
     form.cofResidency.value = "";
     form.mphotoid.value = "";
+});
 
+//listen to auth status changes
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("User logged in:", user.email);
+        getMemData(db).then((snapshot) => {
+            setUpMembData(snapshot);
+        });
+        setUpDataUI(user);
+        const logform = document.querySelector("form");
+        logform.addEventListener("submit", (e) => { e.preventDefault() });
+
+    } else {
+        console.log("User logged out!");
+        setUpDataUI();
+        setUpMembData([]);
+    }
+});
+
+//delete profile
+const deleteProfile = document.querySelector("#modal-account");
+deleteProfile.addEventListener("click", (event) => {
+    if (event.target.tagName === "I") {
+        const pro_Id = event.target.getAttribute("data-id");
+        deleteDoc(doc(db, "profile", pro_Id));
+    }
 })
+
+
+//edit profile
+const editProfile = document.querySelector("#modal-account");
+editProfile.addEventListener("click", (event) => {
+    if (event.target.tagName === "E") {
+        const pro_Id = event.target.getAttribute("data-id");
+        //edit handler here
+    }
+});
